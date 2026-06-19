@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.venv/
+venv/
+env/
+ 
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+ 
+# Data files (terlalu besar untuk Git)
+data/raw/*.csv
+data/raw/*.xlsx
+data/interim/*
+data/processed/*
+!data/**/README.md
+!data/**/.gitkeep
+ 
+# Models (kalau besar)
+# *.pkl  (uncomment kalau model > 100 MB)
+# *.cbm
+ 
+# CatBoost training logs
+catboost_info/
+**/catboost_info/
+ 
+# IDE
+.vscode/
+.idea/
+.DS_Store
+ 
+# OS
+Thumbs.db
+ 
+# Environment variables
+.env
