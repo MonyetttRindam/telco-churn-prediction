@@ -22,6 +22,12 @@ data/processed/*
 # Models (kalau besar)
 # *.pkl  (uncomment kalau model > 100 MB)
 # *.cbm
+models/*.joblib
+
+# MLflow (tracking lokal - reproducible, tak perlu di-commit)
+mlflow.db
+mlartifacts/
+mlruns/
  
 # CatBoost training logs
 catboost_info/
