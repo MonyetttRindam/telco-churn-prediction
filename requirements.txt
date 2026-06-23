@@ -1,0 +1,16 @@
+# === Production runtime: FastAPI serving + Streamlit frontend ===
+# Install: pip install -r requirements.txt
+
+# Core ML & data
+pandas==2.2.3
+scikit-learn==1.5.2
+joblib==1.5.3
+
+# API serving
+fastapi==0.137.2
+uvicorn[standard]==0.49.0
+pydantic==2.13.4
+
+# Frontend
+streamlit==1.58.0
+requests==2.34.2

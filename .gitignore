@@ -6,11 +6,11 @@ __pycache__/
 .venv/
 venv/
 env/
- 
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
- 
+
 # Data files (terlalu besar untuk Git)
 data/raw/*.csv
 data/raw/*.xlsx
@@ -18,28 +18,25 @@ data/interim/*
 data/processed/*
 !data/**/README.md
 !data/**/.gitkeep
- 
-# Models (kalau besar)
-# *.pkl  (uncomment kalau model > 100 MB)
-# *.cbm
-models/*.joblib
+
+# Models & artifacts
+# Commit: model_final.joblib, preprocessor.joblib, model_config.json
+#   (kecil & dibutuhkan API saat repo di-clone)
+# Abaikan: data split (besar, regenerable dari notebook Hari 2)
+models/split_data.joblib
 
 # MLflow (tracking lokal - reproducible, tak perlu di-commit)
 mlflow.db
 mlartifacts/
 mlruns/
- 
-# CatBoost training logs
-catboost_info/
-**/catboost_info/
- 
+
 # IDE
 .vscode/
 .idea/
 .DS_Store
- 
+
 # OS
 Thumbs.db
- 
+
 # Environment variables
 .env

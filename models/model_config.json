@@ -1,0 +1,7 @@
+{
+  "model_type": "LogisticRegression",
+  "threshold": 0.6,
+  "test_f1": 0.6291,
+  "test_recall": 0.7166,
+  "test_precision": 0.5607
+}
