@@ -118,7 +118,7 @@ Just open the hosted apps — nothing to install:
 The fastest way to run the **exact same setup** as production — both services, one command:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/MonyetttRindam/telco-churn-prediction.git
 cd telco-churn-prediction
 docker compose up --build
 ```
@@ -134,7 +134,7 @@ Full details, troubleshooting, and env vars are in [Docker Setup](#-docker-setup
 
 ```bash
 # 1. Clone & set up environment
-git clone <repo-url>
+git clone https://github.com/MonyetttRindam/telco-churn-prediction.git
 cd telco-churn-prediction
 python -m venv .venv
 .venv\Scripts\activate          # Windows  (macOS/Linux: source .venv/bin/activate)
