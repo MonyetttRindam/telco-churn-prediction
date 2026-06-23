@@ -16,7 +16,7 @@ The full system is deployed on **Railway** as two independent services that talk
 
 | Service | URL | What it is |
 |---|---|---|
-| 🎨 **Streamlit UI** | **https://streamlit-production-0be4.up.railway.app** | Interactive form — fill in a customer profile, get a churn prediction + business interpretation |
+| 🎨 **Streamlit UI** | **churn-telco.up.railway.app** | Interactive form — fill in a customer profile, get a churn prediction + business interpretation |
 | ⚡ **FastAPI (Swagger)** | **https://telco-churn-prediction-production.up.railway.app/docs** | Interactive API docs — try `POST /predict` straight from the browser |
 
 > **Heads up:** the live demo runs on Railway's free trial (~30 days), so the URLs may go offline after that window. The project is **fully reproducible locally** in one command — `docker compose up` — so you can always spin up an identical environment yourself (see [Docker Setup](#-docker-setup)).
