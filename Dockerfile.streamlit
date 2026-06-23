@@ -45,8 +45,8 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
 # ============================================
 # Run command
 # ============================================
-CMD ["streamlit", "run", "streamlit_app.py", \
-     "--server.address=0.0.0.0", \
-     "--server.port=8501", \
-     "--server.headless=true", \
-     "--browser.gatherUsageStats=false"]
+CMD streamlit run streamlit_app.py \
+    --server.address=0.0.0.0 \
+    --server.port=${PORT:-8501} \
+    --server.headless=true \
+    --browser.gatherUsageStats=false
