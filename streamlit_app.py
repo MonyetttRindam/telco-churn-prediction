@@ -2,7 +2,7 @@
 
 import streamlit as st
 import requests
-
+import os
 
 
 # === Setup halaman ===
@@ -22,7 +22,7 @@ Model: LogisticRegression  |  Threshold: 0.6  |  F1 Score: 0.63
 st.divider()
 
 # === Cek koneksi ke FastAPI ===
-API_URL = "http://127.0.0.1:8000"
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 try:
     health = requests.get(f"{API_URL}/", timeout=2).json()

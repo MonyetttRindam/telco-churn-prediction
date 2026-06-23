@@ -1,0 +1,48 @@
+services:
+  # ============================================
+  # FastAPI Backend Service
+  # ============================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: telco-churn-api:latest
+    container_name: telco-churn-api
+    ports:
+      - "8000:8000"
+    networks:
+      - telco-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/').read()"]
+      interval: 30s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+
+  # ============================================
+  # Streamlit Frontend Service
+  # ============================================
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    image: telco-churn-streamlit:latest
+    container_name: telco-churn-streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - telco-net
+    restart: unless-stopped
+
+# ============================================
+# Networks
+# ============================================
+networks:
+  telco-net:
+    driver: bridge

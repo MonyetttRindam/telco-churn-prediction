@@ -1,0 +1,60 @@
+# ============================================
+# Stage 1: Base image
+# ============================================
+FROM python:3.12-slim
+
+# ============================================
+# Stage 2: Metadata (opsional tapi profesional)
+# ============================================
+LABEL maintainer="Muhammad Abil Khoiri"
+LABEL description="FastAPI service for Telco Churn Prediction"
+LABEL version="1.0.0"
+
+# ============================================
+# Stage 3: Environment variables
+# ============================================
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+# ============================================
+# Stage 4: System dependencies
+# ============================================
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# ============================================
+# Stage 5: Working directory
+# ============================================
+WORKDIR /app
+
+# ============================================
+# Stage 6: Install Python dependencies
+# ============================================
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ============================================
+# Stage 7: Copy application code
+# ============================================
+COPY src/ ./src/
+COPY app/ ./app/
+COPY models/ ./models/
+
+# ============================================
+# Stage 8: Expose port
+# ============================================
+EXPOSE 8000
+
+# ============================================
+# Stage 9: Healthcheck (opsional, best practice)
+# ============================================
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/').read()" || exit 1
+
+# ============================================
+# Stage 10: Run command
+# ============================================
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
