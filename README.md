@@ -2,7 +2,7 @@
 
 > End-to-end Machine Learning project — from EDA to a deployed, containerized prediction service — that identifies telecom customers at risk of *churn* (leaving the service) so retention teams can intervene before they go.
 
-[![Live Streamlit](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit-production-0be4.up.railway.app)
+[![Live Streamlit](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://churn-telco.up.railway.app)
 [![Live FastAPI](https://img.shields.io/badge/Live%20API-Swagger%20Docs-009688?logo=fastapi&logoColor=white)](https://telco-churn-prediction-production.up.railway.app/docs)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](#-docker-setup)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -16,7 +16,7 @@ The full system is deployed on **Railway** as two independent services that talk
 
 | Service | URL | What it is |
 |---|---|---|
-| 🎨 **Streamlit UI** | **churn-telco.up.railway.app** | Interactive form — fill in a customer profile, get a churn prediction + business interpretation |
+| 🎨 **Streamlit UI** | **https://churn-telco.up.railway.app** | Interactive form — fill in a customer profile, get a churn prediction + business interpretation |
 | ⚡ **FastAPI (Swagger)** | **https://telco-churn-prediction-production.up.railway.app/docs** | Interactive API docs — try `POST /predict` straight from the browser |
 
 > **Heads up:** the live demo runs on Railway's free trial (~30 days), so the URLs may go offline after that window. The project is **fully reproducible locally** in one command — `docker compose up` — so you can always spin up an identical environment yourself (see [Docker Setup](#-docker-setup)).
