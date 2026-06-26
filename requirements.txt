@@ -14,3 +14,7 @@ pydantic==2.13.4
 # Frontend
 streamlit==1.58.0
 requests==2.34.2
+
+# Model storage (HuggingFace Hub) + env loading (MLOps retraining)
+huggingface_hub>=0.24.0
+python-dotenv>=1.0.0

@@ -1,0 +1,101 @@
+customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Churn,num_addons,is_new_customer,has_internet,tenure_group
+SYNTH_B5_000,Female,0,No,Yes,0,Yes,Yes,No,No internet service,No internet service,No internet service,Yes,No internet service,No internet service,Month-to-month,No,Credit card (automatic),18.73,0.03,Yes,1,1,0,0-12
+SYNTH_B5_001,Female,0,No,No,39,Yes,No phone service,Fiber optic,Yes,Yes,No internet service,No internet service,No,No,One year,No,Credit card (automatic),29.12,3281.91,No,2,0,1,25-48
+SYNTH_B5_002,Male,0,No,No,25,Yes,No,Fiber optic,No,No internet service,No,No,Yes,No,One year,Yes,Electronic check,108.41,2808.19,No,1,0,1,25-48
+SYNTH_B5_003,Female,0,No,Yes,0,Yes,No,Fiber optic,Yes,No,No,No,Yes,No,Month-to-month,Yes,Electronic check,68.33,194.89,No,2,1,1,0-12
+SYNTH_B5_004,Female,1,Yes,No,43,Yes,No,Fiber optic,No,No,No,Yes,Yes,No,Month-to-month,Yes,Bank transfer (automatic),101.34,4076.46,No,2,0,1,25-48
+SYNTH_B5_005,Female,0,Yes,Yes,72,No,No,DSL,No,No,Yes,No,No,Yes,Two year,No,Mailed check,66.65,7946.93,No,2,0,1,49-72
+SYNTH_B5_006,Male,0,No,Yes,40,Yes,No,No,No internet service,No internet service,No,No internet service,No internet service,No,One year,Yes,Credit card (automatic),26.18,2776.08,No,0,0,0,25-48
+SYNTH_B5_007,Male,0,Yes,No,2,Yes,Yes,Fiber optic,No internet service,Yes,No,No internet service,Yes,Yes,One year,Yes,Bank transfer (automatic),43.89,724.1,No,3,1,1,0-12
+SYNTH_B5_008,Female,0,No,No,4,Yes,No,Fiber optic,No internet service,Yes,No internet service,No internet service,No,No internet service,Month-to-month,No,Electronic check,31.97,353.23,No,1,1,1,0-12
+SYNTH_B5_009,Male,0,Yes,No,5,Yes,No,Fiber optic,No,No,Yes,No,No internet service,No,One year,No,Mailed check,54.1,2797.4,No,1,1,1,0-12
+SYNTH_B5_010,Male,0,No,No,9,Yes,No phone service,Fiber optic,No,No,Yes,No,Yes,Yes,One year,Yes,Electronic check,74.02,1870.64,No,3,1,1,0-12
+SYNTH_B5_011,Female,0,No,No,1,Yes,Yes,Fiber optic,No,Yes,No,No,No,Yes,Two year,Yes,Bank transfer (automatic),77.45,1157.76,No,2,1,1,0-12
+SYNTH_B5_012,Male,0,Yes,No,26,Yes,Yes,Fiber optic,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electronic check,88.49,1090.4,No,4,0,1,25-48
+SYNTH_B5_013,Male,1,Yes,Yes,71,Yes,No,DSL,Yes,No,Yes,Yes,Yes,Yes,One year,No,Credit card (automatic),85.53,7500.68,No,5,0,1,49-72
+SYNTH_B5_014,Male,0,No,No,33,Yes,No,Fiber optic,Yes,No internet service,Yes,Yes,No,No,Month-to-month,Yes,Credit card (automatic),50.97,788.17,No,3,0,1,25-48
+SYNTH_B5_015,Male,1,No,No,65,Yes,No,Fiber optic,No internet service,Yes,No internet service,Yes,No internet service,No internet service,One year,Yes,Mailed check,30.28,1722.47,Yes,2,0,1,49-72
+SYNTH_B5_016,Female,0,Yes,No,50,No,Yes,Fiber optic,No,No,Yes,No,Yes,Yes,Two year,Yes,Electronic check,99.58,3223.86,No,3,0,1,49-72
+SYNTH_B5_017,Male,1,Yes,No,18,Yes,Yes,DSL,No,Yes,Yes,No,Yes,Yes,Month-to-month,Yes,Mailed check,113.94,3515.55,Yes,4,0,1,13-24
+SYNTH_B5_018,Female,0,No,No,49,Yes,No,DSL,No,No,Yes,Yes,Yes,Yes,Month-to-month,No,Mailed check,95.94,5485.7,No,4,0,1,49-72
+SYNTH_B5_019,Female,0,Yes,No,51,Yes,No,Fiber optic,No internet service,No,No,No,No,No,Month-to-month,Yes,Credit card (automatic),27.42,1484.36,No,0,0,1,49-72
+SYNTH_B5_020,Female,0,No,No,1,Yes,Yes,DSL,No,Yes,No,Yes,No internet service,No,Month-to-month,No,Bank transfer (automatic),53.93,19.1,Yes,2,1,1,0-12
+SYNTH_B5_021,Male,0,No,No,0,Yes,No,No,No,Yes,No,No internet service,No internet service,No internet service,One year,No,Electronic check,27.97,89.79,No,1,1,0,0-12
+SYNTH_B5_022,Male,0,No,Yes,33,Yes,No,DSL,No,No,Yes,No,Yes,Yes,Two year,Yes,Electronic check,99.29,863.03,No,3,0,1,25-48
+SYNTH_B5_023,Male,0,Yes,Yes,61,Yes,No,Fiber optic,No internet service,Yes,Yes,No,No,No,Two year,No,Bank transfer (automatic),43.76,4450.2,No,2,0,1,49-72
+SYNTH_B5_024,Female,0,No,No,62,Yes,Yes,Fiber optic,No,No,Yes,No,Yes,Yes,Month-to-month,Yes,Bank transfer (automatic),118.75,7607.29,No,3,0,1,49-72
+SYNTH_B5_025,Female,1,Yes,No,35,Yes,No phone service,DSL,No,No,No,No,No,No,Month-to-month,No,Mailed check,39.39,408.38,No,0,0,1,25-48
+SYNTH_B5_026,Male,0,Yes,No,57,Yes,Yes,No,Yes,No,No,Yes,No,No,Two year,No,Credit card (automatic),37.78,1380.71,No,2,0,0,49-72
+SYNTH_B5_027,Female,0,Yes,Yes,50,Yes,No,Fiber optic,No,No,No internet service,Yes,No,No,Month-to-month,Yes,Mailed check,30.26,1519.33,No,1,0,1,49-72
+SYNTH_B5_028,Male,0,Yes,No,28,Yes,Yes,No,No internet service,No internet service,No internet service,Yes,No internet service,No internet service,Month-to-month,No,Mailed check,23.13,530.19,Yes,1,0,0,25-48
+SYNTH_B5_029,Male,0,Yes,Yes,3,Yes,Yes,Fiber optic,Yes,No,No internet service,No,Yes,Yes,Two year,Yes,Mailed check,58.4,1076.66,Yes,3,1,1,0-12
+SYNTH_B5_030,Female,0,Yes,No,17,Yes,No,No,Yes,No internet service,No internet service,Yes,No internet service,No internet service,Two year,No,Mailed check,18.86,375.81,No,2,0,0,13-24
+SYNTH_B5_031,Female,0,No,Yes,3,No,No,Fiber optic,Yes,No,No,Yes,No internet service,No internet service,Month-to-month,No,Electronic check,24.87,1256.29,No,2,1,1,0-12
+SYNTH_B5_032,Male,0,No,No,32,No,No phone service,DSL,No,No,Yes,No,Yes,Yes,Two year,Yes,Electronic check,80.1,886.37,No,3,0,1,25-48
+SYNTH_B5_033,Male,0,Yes,Yes,45,Yes,Yes,No,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Two year,Yes,Bank transfer (automatic),22.47,359.7,Yes,0,0,0,25-48
+SYNTH_B5_034,Male,0,Yes,No,35,Yes,No,DSL,Yes,No,Yes,No,Yes,Yes,Month-to-month,No,Electronic check,101.82,3763.99,Yes,4,0,1,25-48
+SYNTH_B5_035,Male,0,No,No,0,Yes,No,DSL,No,No,No internet service,No,Yes,No,Month-to-month,Yes,Electronic check,39.08,12.73,Yes,1,1,1,0-12
+SYNTH_B5_036,Female,0,No,No,6,No,No,No,Yes,Yes,No,Yes,Yes,Yes,Month-to-month,Yes,Credit card (automatic),52.41,424.65,No,5,1,0,0-12
+SYNTH_B5_037,Female,0,No,No,24,Yes,No,Fiber optic,Yes,No internet service,No internet service,No,No,No,Month-to-month,Yes,Credit card (automatic),41.33,591.99,No,1,0,1,13-24
+SYNTH_B5_038,Male,0,Yes,Yes,72,Yes,No,Fiber optic,No,No,Yes,No internet service,No,Yes,Two year,Yes,Bank transfer (automatic),94.11,6745.2,No,2,0,1,49-72
+SYNTH_B5_039,Male,0,No,No,38,Yes,Yes,DSL,No,Yes,Yes,No,Yes,Yes,Month-to-month,Yes,Electronic check,117.7,6105.74,No,4,0,1,25-48
+SYNTH_B5_040,Female,0,Yes,Yes,22,Yes,No,DSL,No,No,No,Yes,No,No,Month-to-month,Yes,Mailed check,43.84,538.28,Yes,1,0,1,13-24
+SYNTH_B5_041,Male,0,Yes,No,69,Yes,Yes,DSL,No internet service,Yes,No,Yes,No internet service,No internet service,One year,Yes,Credit card (automatic),44.11,1507.04,No,2,0,1,49-72
+SYNTH_B5_042,Male,0,No,No,6,Yes,No,DSL,No internet service,Yes,No internet service,Yes,No,No,Two year,No,Bank transfer (automatic),18.72,291.93,No,2,1,1,0-12
+SYNTH_B5_043,Female,0,Yes,Yes,71,Yes,Yes,Fiber optic,Yes,No,Yes,No,Yes,Yes,One year,Yes,Credit card (automatic),111.3,8326.95,No,4,0,1,49-72
+SYNTH_B5_044,Female,0,No,No,5,Yes,No,Fiber optic,No,No internet service,No internet service,No,No internet service,No internet service,Month-to-month,No,Electronic check,21.7,196.07,No,0,1,1,0-12
+SYNTH_B5_045,Male,0,Yes,No,51,Yes,Yes,Fiber optic,Yes,No,No,No,No,No,Month-to-month,No,Electronic check,62.1,3099.17,No,1,0,1,49-72
+SYNTH_B5_046,Female,0,No,No,0,Yes,No,DSL,No,No,No,No,Yes,Yes,Month-to-month,Yes,Electronic check,79.18,241.24,No,2,1,1,0-12
+SYNTH_B5_047,Female,0,No,Yes,0,No,No phone service,DSL,Yes,No,No,No,No,Yes,Two year,Yes,Credit card (automatic),31.72,150.67,No,2,1,1,0-12
+SYNTH_B5_048,Female,0,No,Yes,67,Yes,No,DSL,No,No,Yes,No,Yes,No,One year,Yes,Credit card (automatic),102.76,3827.15,Yes,2,0,1,49-72
+SYNTH_B5_049,Male,0,Yes,No,33,Yes,Yes,No,Yes,Yes,No internet service,Yes,No internet service,Yes,Two year,Yes,Bank transfer (automatic),39.68,2237.13,No,4,0,0,25-48
+SYNTH_B5_050,Male,0,Yes,No,56,Yes,No,Fiber optic,No,No,No,No,Yes,Yes,Month-to-month,Yes,Electronic check,101.19,2508.3,No,2,0,1,49-72
+SYNTH_B5_051,Male,0,Yes,No,30,Yes,No,Fiber optic,Yes,No,No internet service,No internet service,No internet service,Yes,Month-to-month,Yes,Electronic check,46.63,141.6,No,2,0,1,25-48
+SYNTH_B5_052,Male,0,Yes,Yes,32,Yes,No,DSL,No,Yes,Yes,Yes,No,No,Two year,Yes,Mailed check,84.48,3723.75,Yes,3,0,1,25-48
+SYNTH_B5_053,Female,0,No,No,10,Yes,Yes,DSL,No,No,Yes,No,Yes,Yes,Month-to-month,No,Mailed check,91.9,292.83,Yes,3,1,1,0-12
+SYNTH_B5_054,Female,0,No,Yes,11,Yes,Yes,No,No internet service,Yes,No internet service,Yes,No internet service,No,Two year,No,Credit card (automatic),39.17,315.07,No,2,1,0,0-12
+SYNTH_B5_055,Male,0,Yes,No,30,Yes,No,Fiber optic,No,Yes,No,No,No,No,One year,Yes,Mailed check,53.0,625.47,Yes,1,0,1,25-48
+SYNTH_B5_056,Female,1,Yes,No,71,Yes,No,DSL,No,No,Yes,No,Yes,No,Month-to-month,Yes,Credit card (automatic),112.6,5386.51,Yes,2,0,1,49-72
+SYNTH_B5_057,Male,1,Yes,No,51,Yes,Yes,No,No,No,Yes,No,Yes,Yes,One year,Yes,Bank transfer (automatic),117.76,5772.64,Yes,3,0,0,49-72
+SYNTH_B5_058,Male,0,Yes,No,40,Yes,Yes,No,No internet service,No internet service,No,Yes,No internet service,No internet service,Month-to-month,Yes,Credit card (automatic),47.89,1467.65,No,1,0,0,25-48
+SYNTH_B5_059,Male,0,Yes,Yes,27,Yes,No phone service,Fiber optic,No internet service,Yes,No,Yes,No internet service,No,One year,No,Credit card (automatic),18.75,391.92,No,2,0,1,25-48
+SYNTH_B5_060,Female,1,No,No,70,Yes,Yes,No,No internet service,No internet service,No,No internet service,Yes,No internet service,One year,Yes,Bank transfer (automatic),89.0,7205.34,No,1,0,0,49-72
+SYNTH_B5_061,Male,0,Yes,No,8,No,No,DSL,No,No,Yes,No,Yes,Yes,Month-to-month,No,Mailed check,80.24,473.79,No,3,1,1,0-12
+SYNTH_B5_062,Male,0,Yes,No,49,Yes,Yes,DSL,No,No,Yes,No,Yes,Yes,Two year,Yes,Electronic check,116.12,2082.77,No,3,0,1,49-72
+SYNTH_B5_063,Male,1,No,No,65,No,No phone service,DSL,Yes,No,No,No internet service,Yes,No,One year,Yes,Bank transfer (automatic),88.08,4962.77,No,2,0,1,49-72
+SYNTH_B5_064,Male,1,Yes,No,69,Yes,Yes,Fiber optic,Yes,No,No,Yes,No,Yes,One year,Yes,Mailed check,115.96,8321.67,No,3,0,1,49-72
+SYNTH_B5_065,Male,0,No,Yes,14,Yes,No,No,Yes,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,Yes,Credit card (automatic),18.4,1.8,Yes,1,0,0,13-24
+SYNTH_B5_066,Female,0,No,No,3,Yes,Yes,DSL,No,No,No,No internet service,Yes,Yes,Month-to-month,Yes,Electronic check,100.66,3329.3,Yes,2,1,1,0-12
+SYNTH_B5_067,Female,0,Yes,Yes,63,No,Yes,No,No internet service,Yes,No,No,No internet service,No,Month-to-month,Yes,Bank transfer (automatic),89.56,6328.54,No,1,0,0,49-72
+SYNTH_B5_068,Male,1,No,No,64,Yes,No,Fiber optic,No internet service,No internet service,No,No internet service,No,No internet service,Month-to-month,Yes,Credit card (automatic),31.76,2571.27,No,0,0,1,49-72
+SYNTH_B5_069,Female,1,No,No,49,Yes,No,No,Yes,Yes,No,Yes,No internet service,No,Month-to-month,Yes,Electronic check,28.76,1942.15,No,3,0,0,49-72
+SYNTH_B5_070,Female,0,No,No,64,Yes,Yes,DSL,No internet service,Yes,Yes,Yes,Yes,No,One year,Yes,Electronic check,89.93,6820.35,No,4,0,1,49-72
+SYNTH_B5_071,Male,1,Yes,No,44,Yes,No,DSL,No,No,Yes,No,Yes,Yes,One year,Yes,Credit card (automatic),115.4,7673.55,No,3,0,1,25-48
+SYNTH_B5_072,Female,1,Yes,Yes,32,Yes,No,No,No internet service,No internet service,No,No internet service,Yes,No,One year,Yes,Bank transfer (automatic),39.57,1080.48,No,1,0,0,25-48
+SYNTH_B5_073,Female,0,No,Yes,15,Yes,Yes,No,No,Yes,No,No,No internet service,No,Month-to-month,Yes,Electronic check,78.35,977.71,Yes,1,0,0,13-24
+SYNTH_B5_074,Female,0,Yes,Yes,33,No,No,Fiber optic,No,No,Yes,No internet service,Yes,Yes,One year,No,Credit card (automatic),79.73,4402.74,No,3,0,1,25-48
+SYNTH_B5_075,Female,1,No,No,1,Yes,Yes,No,No,Yes,Yes,Yes,Yes,No internet service,One year,Yes,Mailed check,70.56,2572.82,No,4,1,0,0-12
+SYNTH_B5_076,Male,0,No,Yes,67,Yes,Yes,Fiber optic,Yes,Yes,Yes,No internet service,No internet service,No internet service,Two year,Yes,Bank transfer (automatic),58.61,1882.92,No,3,0,1,49-72
+SYNTH_B5_077,Male,0,Yes,Yes,4,No,No,DSL,No,No,Yes,No,Yes,No,Two year,No,Bank transfer (automatic),84.82,2060.7,No,2,1,1,0-12
+SYNTH_B5_078,Female,0,Yes,No,71,Yes,Yes,Fiber optic,No,No,Yes,Yes,Yes,Yes,Month-to-month,Yes,Bank transfer (automatic),116.47,6830.25,No,4,0,1,49-72
+SYNTH_B5_079,Female,1,Yes,No,3,Yes,No,No,No,Yes,No,No,No,No,Month-to-month,No,Credit card (automatic),59.32,268.4,No,1,1,0,0-12
+SYNTH_B5_080,Male,0,Yes,Yes,4,Yes,No,No,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,No,Credit card (automatic),19.64,50.14,No,0,1,0,0-12
+SYNTH_B5_081,Female,0,Yes,No,0,Yes,No,No,Yes,No internet service,No internet service,No internet service,No,No internet service,Month-to-month,Yes,Mailed check,19.33,0.0,Yes,1,1,0,0-12
+SYNTH_B5_082,Female,1,No,No,41,Yes,No,No,Yes,No internet service,Yes,No,No,No,Month-to-month,No,Bank transfer (automatic),78.67,2189.71,No,2,0,0,25-48
+SYNTH_B5_083,Female,0,No,No,13,Yes,No,DSL,No,No,Yes,No,Yes,Yes,Two year,No,Mailed check,115.77,4245.0,No,3,0,1,13-24
+SYNTH_B5_084,Male,1,Yes,Yes,17,Yes,Yes,DSL,No,No,No,Yes,Yes,Yes,Month-to-month,No,Electronic check,66.03,1143.81,Yes,3,0,1,13-24
+SYNTH_B5_085,Female,0,No,No,8,No,No phone service,No,No,Yes,No,No internet service,No,No,Month-to-month,Yes,Electronic check,25.98,52.71,No,1,1,0,0-12
+SYNTH_B5_086,Male,0,No,No,21,Yes,Yes,No,No,No,No internet service,No,No,No internet service,Two year,Yes,Electronic check,48.36,223.42,Yes,0,0,0,13-24
+SYNTH_B5_087,Female,1,Yes,No,72,Yes,Yes,Fiber optic,Yes,No,Yes,No,Yes,Yes,One year,No,Bank transfer (automatic),114.88,7724.77,No,4,0,1,49-72
+SYNTH_B5_088,Male,0,Yes,Yes,70,Yes,No,Fiber optic,Yes,No internet service,Yes,No internet service,No,Yes,One year,No,Bank transfer (automatic),104.67,8400.06,No,3,0,1,49-72
+SYNTH_B5_089,Male,0,Yes,No,63,Yes,No,DSL,No,No,Yes,No,Yes,Yes,Two year,Yes,Credit card (automatic),118.61,8220.76,No,3,0,1,49-72
+SYNTH_B5_090,Male,0,Yes,Yes,23,Yes,Yes,DSL,No,No,Yes,No,Yes,Yes,Month-to-month,Yes,Mailed check,112.22,3347.97,No,3,0,1,13-24
+SYNTH_B5_091,Female,0,No,No,30,Yes,Yes,No,No internet service,Yes,No,Yes,No internet service,No,Month-to-month,No,Bank transfer (automatic),60.11,2091.97,Yes,2,0,0,25-48
+SYNTH_B5_092,Male,0,Yes,No,68,Yes,Yes,Fiber optic,Yes,No,Yes,No,Yes,Yes,One year,No,Electronic check,107.05,7857.33,No,4,0,1,49-72
+SYNTH_B5_093,Female,0,No,No,47,Yes,Yes,Fiber optic,Yes,No,Yes,No,Yes,Yes,One year,Yes,Credit card (automatic),100.41,7641.45,No,4,0,1,25-48
+SYNTH_B5_094,Female,0,No,No,11,Yes,No,Fiber optic,No,Yes,No,Yes,No internet service,No internet service,Month-to-month,No,Mailed check,30.67,1030.53,No,2,1,1,0-12
+SYNTH_B5_095,Male,0,No,No,39,Yes,No,Fiber optic,Yes,No internet service,Yes,No,No,No,Two year,Yes,Credit card (automatic),55.04,4924.14,No,2,0,1,25-48
+SYNTH_B5_096,Male,1,No,No,2,Yes,No,DSL,No,No,Yes,No,No,No,Month-to-month,No,Electronic check,58.11,270.72,No,1,1,1,0-12
+SYNTH_B5_097,Female,0,Yes,Yes,19,Yes,Yes,DSL,No,No,No,No,Yes,Yes,Month-to-month,No,Mailed check,86.94,2742.31,No,2,0,1,13-24
+SYNTH_B5_098,Female,0,Yes,No,50,Yes,Yes,DSL,No,Yes,Yes,No,Yes,Yes,Month-to-month,Yes,Electronic check,102.32,7199.6,Yes,4,0,1,49-72
+SYNTH_B5_099,Male,0,No,No,35,Yes,Yes,Fiber optic,Yes,No,No,Yes,Yes,No,Month-to-month,Yes,Electronic check,72.34,1197.84,Yes,3,0,1,25-48

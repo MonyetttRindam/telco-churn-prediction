@@ -40,3 +40,9 @@ Thumbs.db
 
 # Environment variables
 .env
+
+# HF upload staging (temporary, dibuat & dihapus oleh scripts/upload_initial_model.py)
+hf_upload/
+
+# SDV synthesizer artifact (regenerable via ml/generate_synthetic.py)
+ml/data/synthetic/synthesizer.pkl
