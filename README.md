@@ -305,6 +305,66 @@ Full model details → [docs/MODEL_CARD.md](docs/MODEL_CARD.md). API usage → [
 
 ---
 
+## 🔌 API Usage (MLOps)
+
+Phase 2 adds a versioned model registry (HuggingFace Hub) with retraining,
+rollback, and batch management on top of the Phase 1 `/predict` endpoint.
+
+### Local Development
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Interactive OpenAPI docs at `http://localhost:8000/docs`.
+
+### Public Endpoints
+
+```bash
+# Healthcheck + active model version
+curl http://localhost:8000/
+
+# Active model status + metrics + batch counts
+curl http://localhost:8000/api/status
+
+# Version history
+curl http://localhost:8000/api/history
+
+# Available synthetic batches
+curl http://localhost:8000/api/batches
+
+# Predict churn (uses the active model version)
+curl -X POST http://localhost:8000/predict \
+  -H "Content-Type: application/json" \
+  -d @scripts/sample_customer.json
+```
+
+### Admin Endpoints (require `X-API-Key`)
+
+```bash
+# Trigger async retraining with a batch
+curl -X POST http://localhost:8000/api/retrain \
+  -H "X-API-Key: YOUR_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"batch_id": "batch_2"}'
+
+# Poll job status (job_id from the /api/retrain response)
+curl http://localhost:8000/api/jobs/JOB_ID
+
+# Upload a new synthetic batch (validated against 7 rules before upload)
+curl -X POST http://localhost:8000/api/upload-batch \
+  -H "X-API-Key: YOUR_KEY" \
+  -F "file=@my_batch.csv"
+
+# Rollback to the previous active version
+curl -X POST http://localhost:8000/api/rollback \
+  -H "X-API-Key: YOUR_KEY"
+```
+
+The API key is set via `MLOPS_API_KEY` (see [.env.example](.env.example)).
+
+---
+
 ## 🔮 Future Improvements
 
 - [ ] **CI/CD** via GitHub Actions — run tests + auto-deploy to Railway on every push.
@@ -329,3 +389,12 @@ Data Science / ML Engineering portfolio project.
 ## 📄 License
 
 MIT License — see [LICENSE](LICENSE).
+
+---
+
+## Future Enhancements
+
+- Generic error messages (currently forwards internal exception detail)
+- Rate limiting on WRITE endpoints (slowapi integration)
+- Optional /docs privacy for production (currently public for portfolio showcase)
+- Model registry caching optimization (reduce HF Hub calls per validation)

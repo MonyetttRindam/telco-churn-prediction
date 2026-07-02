@@ -38,12 +38,24 @@
 - [Done] 1.7 `scripts/upload_initial_model.py` → push v_initial + `registry.json` ke HF Hub
 
 ### Phase 2 — Backend (2-3 hari)
-- [ ] `api/core/model_manager.py` — load/swap model dari HF, rollback
-- [ ] `api/core/retraining.py` — pipeline lengkap + validation gate
-- [ ] `api/core/registry.py` — baca/tulis `registry.json`
-- [ ] Endpoint `/retrain`, `/rollback`, `/status`, `/history`
-- [ ] API key auth (simpan di Railway env var)
-- [ ] Test semua endpoint via curl/Postman
+
+Keputusan Phase 2 (locked):
+- **Batch selection:** Upload + manual dropdown.
+- **Task handling:** Background task (retraining async).
+- **Archive strategy:** Registry reference (1 registry file, versi ditrack di dalamnya).
+- **Rejection handling:** Model yang gagal gate diarsipkan status `rejected`.
+- **Validation rules:** Ketat (7 rules pada batch upload).
+- **Batch naming:** Auto-rename `batch_N.csv` (via `next_batch_number`).
+- **Concurrency:** Thread lock (single-instance).
+
+- [Done] 2.1 `api/core/registry.py` — kelas `Registry` (satu-satunya interface `registry.json`), thread-safe + cache TTL; schema v2 (versions + batches); `scripts/migrate_registry_v2.py` (one-time, run + verified); `api/core/test_registry.py` (manual test, self-cleanup, all PASS)
+- [Done] 2.2 `api/core/model_manager.py` — load/swap model dari HF (atomic), thread-safe (RLock); HF path convention `models/{version_id}/`; `scripts/migrate_hf_structure_v2.py` (one-time, run + verified); `api/core/test_model_manager.py` (all PASS, live)
+- [Done] 2.3 `api/core/batch_manager.py` — kelas `BatchManager` (single source of truth batch di HF); list/download/validate(7 rules)/upload; vocabulary (16 categorical) di-extract dari `train.csv` di `__init__`; `api/core/test_batch_manager.py` (9/9 PASS, live)
+- [Done] 2.4 `api/core/retraining.py` — `RetrainingPipeline.retrain(batch_id)`: accumulate → reuse `ml/train.py`+`ml/evaluate.py` → validation gate → promote/reject → upload `models/{version_id}/`; `api/core/test_retraining.py` (live: batch_1 REJECTED by recall gate, cleanup 0 stray)
+- [Done] 2.5 `api/core/job_queue.py` — in-memory background job queue (daemon thread, `Lock`, LRU eviction oldest-terminal, dataclass→asdict result serialization); `api/core/test_job_queue.py` (7/7 PASS, pure local)
+- [Done] 2.6 `api/core/auth.py` — API key auth (`X-API-Key` header, `MLOPS_API_KEY` di `.env`/Railway, constant-time compare, 401/403/500); `.env.example` template; `api/core/test_auth.py` (4/4 PASS, TestClient)
+- [Done] 2.7 Router layer: `api/deps.py` (singleton DI), `api/schemas.py` (Pydantic v2), `api/routes/{mlops,retrain,batches,jobs}.py` (`/status`,`/history`,`/rollback`,`/verify-key`,`/retrain`,`/batches`,`/upload-batch`,`/jobs`); exception→HTTP mapping; `api/test_endpoints.py` (11/11 PASS live, self-cleanup)
+- [Done] 2.8 Integrasi `app/main.py`: lifespan startup (`init_dependencies`), `/predict` pakai singleton `ModelManager` (active version), include 4 router Phase 2, tambah `model_version` di `PredictionOutput`; README API Usage section; verified live (startup clean, 4 curl PASS, `/predict` → model_version=v_initial)
 
 ### Phase 3 — Frontend (1 hari)
 - [ ] `streamlit_app/pages/3_MLOps_Dashboard.py`
@@ -133,3 +145,9 @@ telco-churn-prediction/
 | 2026-06-26 | customerID synthetic = `SYNTH_B{batch}_{idx:03d}` | ID asli tak meaningful untuk synthesizer; re-add setelah sampling untuk schema-match | - |
 | 2026-06-26 | SDV fit HANYA di base columns (drop 4 engineered); engineered di-derive deterministically via `src.preprocessing.add_features()` setelah sampling | Copula tak bisa menjaga invariant deterministik base↔derived (mis. tenure_group fungsi dari tenure); re-derive memirror pipeline production & respect single-source-of-truth | Override engineered cols jadi categorical (Step 1.6 awal) |
 | 2026-06-26 | HF Hub repo `MonyetttRindam/telco-churn-models` (public) sebagai model storage. Token di `.env` (gitignored). Schema: `current/` (active artifacts), `synthetic/` (5 batches), `registry.json` (version history) | Storage model terpusat + versioning untuk retraining; public agar mudah di-pull saat deploy | - |
+| 2026-07-02 | `registry.json` schema v2: tambah field `batches.available[]` + `batches.next_batch_number`; track versions DAN batches dalam satu file (registry-reference archive strategy) | Retraining butuh tahu batch mana available/unused & auto-naming `batch_N`; satu file = simple, atomic | schema v1 (versions only) |
+| 2026-07-02 | `Registry` = satu-satunya interface `registry.json`; thread-safe (`Lock`), in-memory cache TTL 60s, WRITE selalu re-read fresh dari Hub sebelum mutate lalu invalidate cache | Konsistensi single-instance + hindari clobber stale write; cache kurangi latency read berulang | - |
+| 2026-07-02 | Version status lifecycle: `pending`/`rejected` → `active` (promote), old active → `archived`; `previous` = target rollback. Hanya `pending`/`rejected` yang promotable | Gate menghasilkan model pending; reject diarsipkan; rollback butuh pointer `previous` | - |
+| 2026-07-02 | **Known optimization (LOW PRIORITY, untuk Step 2.7 UI responsiveness):** cache `BatchManager._duplicate_reference()` dengan TTL ~5 menit. Saat ini reference (train + semua batch) di-download & dibangun ulang tiap `validate_batch()` call — lambat kalau UI validasi berkali-kali. Belum diimplement; catat sebagai perbaikan | Dedup reference jarang berubah dalam window pendek; TTL cache kurangi latensi validasi berulang di endpoint upload | - |
+| 2026-07-02 | Retraining: model di-upload ke `models/{version_id}/`; preprocessor FIXED tetap di-upload ulang tiap versi (redundan) agar tiap versi self-contained & loadable independen oleh `ModelManager` | Konsistensi load per-versi > hemat storage (preprocessor 8KB); hindari special-case saat swap/rollback | - |
+| 2026-07-02 | Retraining order: upload artifacts → `add_version(pending)` → `promote_version` → `model_manager.swap_to` → `mark_batch_used`. Prefer konsistensi registry > in-memory (kalau swap gagal, registry sudah promoted, `/predict` masih pakai model lama sampai reload) | Registry = source of truth; in-memory recoverable via `load_active()` | - |

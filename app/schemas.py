@@ -44,3 +44,4 @@ class PredictionOutput(BaseModel):
     churn: int = Field(..., description="1 = churn, 0 = tidak churn")
     probability: float = Field(..., ge=0, le=1, description="Probabilitas churn (0-1)")
     threshold: float = Field(..., description="Threshold yang dipakai untuk decision")
+    model_version: str = Field(..., description="Versi model yang membuat prediksi ini")
